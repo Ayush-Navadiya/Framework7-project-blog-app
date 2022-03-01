@@ -1,0 +1,19 @@
+{
+  "cwd": "D:\\frame7",
+  "type": [
+    "web"
+  ],
+  "name": "simple",
+  "framework": "core",
+  "template": "single-view",
+  "bundler": "vite",
+  "cssPreProcessor": false,
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkTheme": false,
+    "iconFonts": true,
+    "fillBars": false
+  },
+  "customBuild": false
+}

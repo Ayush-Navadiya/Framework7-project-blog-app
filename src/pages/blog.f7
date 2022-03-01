@@ -1,0 +1,77 @@
+<template>
+    <div class="page" data-name="blog">
+
+            <div class="navbar">
+                <div class="navbar-bg"></div>
+                <div class="navbar-inner">
+                    <div class="title">Our Blogs</div>
+                </div>
+            </div>
+
+
+
+
+        <div class="page-content">
+            ${blog.map((each) => $h`
+            <div class="card card-expandable">
+                <div class="card-content">
+                    <div class="card-header text-color-black display-block">${each.title}<br />
+                        <small style="opacity: 0.7">${each.short_des}</small>
+                    </div>
+                    <div style="background-image: url(http://localhost:3000${each.image});background-size: cover;height: 300px">
+                        <a href="#" class="link card-close card-opened-fade-in color-white"
+                           style="position: absolute; right: 15px; top: 15px">
+                            <i class="icon f7-icons">xmark_circle_fill</i>
+                        </a>
+                    </div>
+                    <div class="card-content-padding">
+                        <p>${each.des}</p>
+                    </div>
+                </div>
+            </div>
+            `)}
+
+        </div>
+    </div>
+    </template>
+
+
+<style>
+    .demo-card-header-pic .card-header {
+        height: 40vw;
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+    }
+
+    .demo-card-header-pic .card-content-padding .date {
+        color: #8e8e93;
+    }
+
+</style>
+
+
+<script>
+
+    import * as app from "framework7";
+
+    app.request({
+        type: "get",
+        url: "http://localhost:3000/viewframe7/",
+        crossDomain: true,
+        success: function (objstr) {
+            let obj = JSON.parse(objstr);
+            if (obj.status === 'success') {
+                console.log("request");
+                window.data = obj.data;
+            }
+        }
+    })
+
+    export default () => {
+        let blog = window.data;
+        console.log("Blog:" + blog);
+        return $render;
+    }
+
+</script>

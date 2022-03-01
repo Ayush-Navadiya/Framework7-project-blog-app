@@ -1,0 +1,171 @@
+<template>
+    <div class="page" data-name="signup">
+
+        <div class="page-content infinite-scroll-content infinite-scroll-top">
+
+        <div class="d-flex flex-column flex-root">
+            <!--begin::Login-->
+            <div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
+                <!--begin::Aside-->
+                <div class="login-aside d-flex flex-column flex-row-auto" style="background-color: #F2C98A;">
+                    <!--begin::Aside Top-->
+                    <div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
+                        <!--begin::Aside header-->
+                        <a href="#" class="text-center mb-10">
+                            <img src="assets/media/logos/logo-letter-1.png" class="max-h-70px" alt="" />
+                        </a>
+                        <!--end::Aside header-->
+                        <!--begin::Aside title-->
+                        <h3 class="font-weight-bolder text-center font-size-h4 font-size-h1-lg" style="color: #986923;">Discover Amazing Metronic
+                            <br />with great build tools</h3>
+                        <!--end::Aside title-->
+                    </div>
+                    <!--end::Aside Top-->
+                    <!--begin::Aside Bottom-->
+                    <div class="aside-img d-flex flex-row-fluid bgi-no-repeat bgi-position-y-bottom bgi-position-x-center" style="background-image: url(http://localhost:3002/assets/media/svg/illustrations/login-visual-1.svg)"></div>
+                    <!--end::Aside Bottom-->
+                </div>
+                <!--begin::Aside-->
+                <!--begin::Content-->
+                <div class="login-content flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
+                    <!--begin::Content body-->
+                    <div class="d-flex flex-column-fluid flex-center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!--begin::Signin-->
+                        <div class="login-form login-signin">
+                            <!--begin::Form-->
+                            <form class="form" novalidate="novalidate" id="kt_login_signup_form">
+                                <!--begin::Title-->
+                                <div class="pb-13 pt-lg-0 pt-5">
+                                    <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Sign Up</h3>
+                                    <p class="text-muted font-weight-bold font-size-h4">Enter your details to create your account</p>
+                                </div>
+                                <!--end::Title-->
+                                <!--begin::Form group-->
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col">
+                                            <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6" type="text" placeholder="First name" name="fname" autocomplete="off" />
+                                        </div>
+                                        <div class="col">
+                                            <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6" type="text" placeholder="Last name" name="lname" autocomplete="off" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Form group-->
+                                <!--begin::Form group-->
+
+                                <div class="form-group">
+                                    <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6" type="number" placeholder="Mobile Number" name="mno" autocomplete="off" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6" type="tel" placeholder="Email" name="email" autocomplete="off" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6" type="email" placeholder="City" name="city" autocomplete="off" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6" type="text" placeholder="Address" name="address" autocomplete="off" />
+                                </div>
+
+                                <div class="form-group">
+                                    <select name="gender" class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6">
+                                        <option value="m">Male</option>
+                                        <option value="f">Female</option>
+                                    </select>
+                                </div>
+
+
+                                <!--end::Form group-->
+                                <!--begin::Form group-->
+                                <div class="form-group">
+                                    <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6" type="password" placeholder="Password" name="password" autocomplete="off" />
+                                </div>
+                                <!--end::Form group-->
+                                <!--begin::Form group-->
+                                <div class="form-group">
+                                    <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg font-size-h6" type="password" placeholder="Confirm password" name="cpassword" autocomplete="off" />
+                                </div>
+                                <!--end::Form group-->
+
+                            </form>
+
+                            <!--begin::Form group-->
+                            <div class="form-group d-flex flex-wrap pb-lg-0 pb-3">
+                                <button type="submit" name="submitbtn" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4">Sign up</button>
+                            </div>
+                            <!--end::Form group-->
+
+                            <!--end::Form-->
+                        </div>
+                        <!--end::Signin-->
+
+                        <!--end::Forgot-->
+                    </div>
+
+                </div>
+                <!--end::Login-->
+            </div>
+            <!--end::Main-->
+
+        </div>
+
+        </div>
+
+        <!--<script src="../scripts/signup.js"></script>-->
+    </div>
+
+</template>
+
+<script>
+    import * as app from "framework7";
+
+    export default (props, { $, $on, $f7, $f7router }) => {
+        $on('pageInit', () => {
+            $('[name="submitbtn"]').on('click', function (e) {
+                let form_data = new URLSearchParams(new FormData($("#kt_login_signup_form")[0]));
+
+                app.request({
+                    type: "POST",
+                    url: "http://localhost:3000/api/signup_click/",
+                    data: form_data,
+                    crossDomain: true,
+                    cache: false,
+                    processData: false,
+                    success: function (objstr) {
+                        try {
+                            const obj = JSON.parse(objstr);
+                            if (obj.status === 'success') {
+                                $f7.dialog.alert("Successfully Signed-up");
+                                $f7router.navigate('/');
+                            } else {
+                                alert("Some error occured");
+                            }
+                        } catch (e) {
+                            console.log(e);
+                            Swal.fire('Error', 'Something went wrong!', 'error');
+                        }
+                    }
+                });
+            });
+        })
+
+        return $render;
+    };
+</script>
