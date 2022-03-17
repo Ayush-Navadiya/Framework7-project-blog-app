@@ -26,3 +26,9 @@ Framework7 Project to make cross platform blog app using node js API
 
 1. Download Node-JS_Blog-api-server from : https://github.com/Ayush-Navadiya/Node-JS_Blog-api-server
 2. Install and run it for api calling
+
+
+
+###Contribute 
+
+Give a thanks with coffee [Here](https://www.buymeacoffee.com/ayushnavadiya).
