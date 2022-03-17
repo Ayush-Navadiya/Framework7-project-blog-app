@@ -1,7 +1,7 @@
 # Framework7-project-blog-app
 Framework7 Project to make cross platform blog app using node js API
 
-
+---
 ### Prerequisite
 
 1. Download Node JS from : https://nodejs.org/
@@ -10,7 +10,7 @@ Framework7 Project to make cross platform blog app using node js API
                                                    1. node --version\
                                                    2. npm --version
 
-
+---
 ### How To Run
 
 1. Open Command Line
@@ -21,7 +21,7 @@ Framework7 Project to make cross platform blog app using node js API
 
 
 
-
+---
 ### Api Calling
 
 1. Download Node-JS_Blog-api-server from : https://github.com/Ayush-Navadiya/Node-JS_Blog-api-server
@@ -29,7 +29,7 @@ Framework7 Project to make cross platform blog app using node js API
 
 
 
-
+---
 ### Contribute 
 
 Give a thanks with coffee [Here](https://www.buymeacoffee.com/ayushnavadiya).
